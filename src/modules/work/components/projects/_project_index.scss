@@ -1,0 +1,36 @@
+.Project {
+    &-container {
+        width: 100%;
+        margin: 0 auto;
+        background-color: var(--default-color);
+    }
+    &-category {
+        width: 100%;
+        //max-width: 1600px; //genera problemas con pantallas grandes en la animacion fadeIn
+        min-height: 100vh;
+        min-height: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        @media screen and (max-width: 992px){
+          flex-direction: column;
+        }
+    }
+    &-header {
+        width: 40%;
+        min-height: 600px;
+        height: 100vh;
+        @media screen and (max-width: 992px){
+          width: 100%;
+          min-height: 0;
+          height: auto;
+        }
+    }
+    &-demos {
+        //border: solid green 1px;
+        width: 60%;
+        @media screen and(max-width: 992px) {
+          width: 100%;
+        }
+    }
+}

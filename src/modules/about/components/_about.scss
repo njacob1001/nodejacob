@@ -1,0 +1,134 @@
+.About {
+  &-wrapper {
+    width: 100%;
+    margin: var(--header-height) 0 0 0;
+    padding: 0;
+    border-bottom: var(--first-color) solid 1px;
+  }
+  &-container {
+    width: 100%;
+    max-width: 1600px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-main);
+    color: var(--default-color);
+    margin: 0 auto;
+    @media  screen and (max-width: 992px) {
+      flex-direction: column;
+      height: auto;
+    }
+  }
+  &-image {
+    margin-left: 3rem;
+    width: 600px;
+    height: auto;
+    @media  screen and (max-width: 850px) {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  &-main {
+    margin: 0 3rem 0 3rem;
+    min-height: 260px;
+    max-width: 700px;
+  }
+  &-title {
+    font-size: 2.15rem;
+    margin-bottom: 2rem;
+    @media  screen and (max-width: 992px) {
+      margin-top: 2.5rem;
+      font-size: 1.8rem;
+    }
+  }
+  &-description {
+    font-size: var(--t2);
+    line-height: 1.35;
+    letter-spacing: 0.05rem;
+    font-weight: 300;
+
+  }
+  &-skillContainer {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto 4rem auto;
+    display: flex;
+    flex-flow: row wrap;
+    font-family: var(--font-main);
+    color: var(--default-color);
+    @media  screen and (max-width: 992px) {
+      padding-bottom: 3.8rem;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      margin: 0;
+    }
+  }
+  &-skillTitle {
+    text-transform: uppercase;
+    margin: 1rem 3rem 1rem 3rem;
+    width: 100%;
+    position: relative;
+    @media  screen and (max-width: 992px) {
+      text-align: center;
+      margin: 3rem 0 0 0;
+    }
+    &::after {
+      content: "";
+      position: relative;
+      margin-top: 2px;
+      display: block;
+      width: 50px;
+      height: 8px;
+      background-color: var(--first-color);
+      @media  screen and (max-width: 992px) {
+        margin: 0 auto;
+      }
+
+    }
+  }
+  &-skill {
+    width: 40%;
+    margin: 1rem 3rem 1rem 3rem;
+    @media  screen and (max-width: 992px) {
+      width: 100%;
+      margin: 1.5rem 0 0 0;
+      padding: 0 1.45rem 0 1.45rem;
+    }
+    & strong {
+      display: block;
+      font-size: var(--t3);
+    }
+    & span {
+      font-weight: 300;
+      font-style: italic;
+      font-size: var(--s1);
+    }
+  }
+}
+.Indicator {
+  &-container {
+    margin-top: 1rem;
+    width: 100%;
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  &-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--first-color);
+    opacity: 0.5;
+  }
+  &-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--first-color);
+  }
+}

@@ -1,0 +1,177 @@
+@keyframes svgLogoAnimToLight{
+    to {
+        stroke: var(--default-color);
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes svgLogoAnimToDark{
+    to {
+        stroke: var(--second-color);
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes PanelLinksAnim {
+  0% {
+    clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);
+  }
+  5% {
+    transform: translate3d(0,0,0);
+    clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);
+  }
+  100% {
+    transform: translate3d(0,0,0);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes PanelLinksAnimOut {
+  0% {
+    transform: translate3d(0,0,0);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  95% {
+    transform: translate3d(0,0,0);
+    clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);
+  }
+  100% {
+    clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);
+  }
+}
+
+.Svg {
+    &-borderDark {
+        fill:none;
+        stroke:var(--default-color);
+        stroke-width:9;
+        stroke-miterlimit:10;
+        transition: all 0.5s ease;
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        transition: stroke-dashoffset 0.5s ease;
+        &.is-light {
+            animation: svgLogoAnimToLight 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+        }
+        &.is-dark {
+            animation: svgLogoAnimToDark 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+        }
+    }
+    &-letterLight {
+        fill:#0066CC;
+    }
+    &-letterDark {
+        fill:#005BA9;
+    }
+}
+
+.Header {
+  &-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: transparent;
+    overflow: hidden;
+  }
+  &-container {
+    width: 100%;
+    min-width: 200px;
+    height: var(--header-height);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &-item {
+    height: 100%;
+    &.Logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &.Menu {
+      width: 350px;
+      display: flex;
+      justify-content: space-around;
+      margin-right: 5rem;
+      &.is-active {
+        @media screen and(max-width: 850px) {
+//          transform: translate3d(0,0,0);
+            animation: PanelLinksAnim 0.2s var(--timing-func-one) forwards;
+        }
+      }
+      @media screen and(max-width: 850px){
+        position: fixed;
+        z-index: 990;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0,0,0, 0.9);
+        //transform: translate3d(0, -100%, 0);
+        animation: PanelLinksAnimOut 0.2s var(--timing-func-one) forwards;
+
+      }
+    }
+  }
+  &-link {
+    text-align: center;
+    flex-basis: 0;
+    flex-grow: 0.25;
+    align-self: center;
+    font-family: var(--font-main);
+    color: var(--default-color);
+    font-size: var(--t3);
+    padding-bottom: 0.5rem;
+    border-bottom: solid transparent 2px;
+    cursor: pointer;
+    transition: border-color 0.5s ease;
+    &.is-active{
+      font-weight: 600;
+      border-color: var(--third-color);
+      @media screen and (max-width: 850px){
+        border-width: 4px;
+      }
+    }
+    @media screen and (max-width: 850px) {
+      //border: solid red 1px;
+      text-transform: uppercase;
+      flex-grow: 0;
+      font-size: 3rem;
+      margin: 1rem 0;
+    }
+  }
+  &-logo {
+    position: relative;
+    z-index: 999;
+    margin-left: 5rem;
+    width: 100px;
+    min-width: 60px;
+    height: 60%;
+    padding: 0.3rem 0;
+    @media screen and(max-width: 850px) {
+      margin-left: 0;
+    }
+  }
+}
+.hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: var(--default-color); }
+.hamburger-inner {
+  background-color: var(--default-color);
+  &::after,&::before {
+    background-color: var(--default-color);
+  }
+}
+#HMenu {
+  position: relative;
+  z-index: 999;
+  display: none;
+  outline: none;
+  @media screen and(max-width: 850px) {
+    display: inline;
+  }
+}
