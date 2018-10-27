@@ -87,7 +87,6 @@ node_modules/
 jspm_packages/
 
 # Deploy of the project folder
-public/
 
 # Typescript v1 declaration files
 typings/
