@@ -55,7 +55,7 @@
   "short_name": "Jacob",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": "index.html?utm=homescreen",
+  "start_url": "./?utm=homescreen",
   "description": "Improving the user experience on the web",
   "scope": "./",
   "lang": "en",
